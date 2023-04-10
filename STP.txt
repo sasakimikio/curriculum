@@ -1,0 +1,26 @@
+・Switch1：32769
+・Switch2：20481
+・Switch3：4097
+・Switch4：8193
+
+問1　ルートブリッジはSwitch3
+
+問2　
+switch1-switch2:指定ポート
+　ルートポートの対向ポートにあたるため
+switch1-switch3:ルートポート(RP)
+　ルートブリッジに近いため
+
+switch2-switch1:ルートポート(RP)
+　ファストイーサネットで繋がっておりコストが小さいため
+switch2-switch4:ブロッキングポート
+　ブリッジIDの値がswitch4より大きく、優先度が低いため。
+
+switch3-switch1:指定ポート(DP)
+switch3-switch4:指定ポート(DP)
+　どちらもルートブリッジのポートであるため
+
+switch4-switch2:指定ポート(DP)
+　コリジョンドメインには一つ指定ポートが入り、switch2より優先度が高かったため
+switch4-switch3:ルートポート(RP)
+　コストが小さいため
